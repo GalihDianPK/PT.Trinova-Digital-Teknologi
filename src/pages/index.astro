@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
 import Services from '../components/Services.astro';
-import CaseStudies from '../components/CaseStudies.astro';
 import Founders from '../components/Founders.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
@@ -89,7 +88,6 @@ const footer = {
       links: [
         { text: "About Us", href: "#about" },
         { text: "Services", href: "#services" },
-        { text: "Case Studies", href: "#case-studies" },
         { text: "Contact", href: "#contact" },
       ],
     },
@@ -111,7 +109,6 @@ const footer = {
     <About {...about} />
     <Services />
     <Founders {...founders} />
-    <CaseStudies />
     <Contact {...contact} />
   </main>
   <Footer {...footer} />
