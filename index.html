@@ -7,645 +7,411 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-surface-variant": "#44474f",
-                      "tertiary-fixed": "#e4e2e2",
-                      "on-secondary-fixed": "#241a00",
-                      "tertiary-fixed-dim": "#c7c6c6",
-                      "on-error": "#ffffff",
-                      "on-tertiary-fixed-variant": "#464747",
-                      "primary-container": "#001b44",
-                      "on-secondary-container": "#745c00",
-                      "on-surface": "#191c1d",
-                      "secondary-container": "#fed65b",
-                      "on-secondary": "#ffffff",
-                      "inverse-on-surface": "#f0f1f2",
-                      "on-primary-fixed-variant": "#314671",
-                      "primary-fixed": "#d8e2ff",
-                      "inverse-surface": "#2e3132",
-                      "on-tertiary-container": "#858585",
-                      "surface-container-lowest": "#ffffff",
-                      "on-primary-container": "#7084b3",
-                      "surface-container-high": "#e7e8e9",
-                      "primary-fixed-dim": "#b1c6f9",
-                      "outline": "#75777f",
-                      "surface-container-low": "#f3f4f5",
-                      "surface": "#f8f9fa",
-                      "secondary-fixed": "#ffe088",
-                      "tertiary": "#020303",
-                      "surface-bright": "#f8f9fa",
-                      "inverse-primary": "#b1c6f9",
-                      "on-error-container": "#93000a",
-                      "surface-variant": "#e1e3e4",
-                      "surface-dim": "#d9dadb",
-                      "on-secondary-fixed-variant": "#574500",
-                      "surface-container-highest": "#e1e3e4",
-                      "surface-container": "#edeeef",
-                      "on-tertiary": "#ffffff",
-                      "surface-tint": "#495e8a",
-                      "outline-variant": "#c5c6d0",
-                      "error": "#ba1a1a",
-                      "error-container": "#ffdad6",
-                      "on-primary-fixed": "#001a42",
-                      "on-primary": "#ffffff",
-                      "tertiary-container": "#1c1d1d",
-                      "background": "#f8f9fa",
-                      "secondary": "#735c00",
-                      "primary": "#00020a",
-                      "on-tertiary-fixed": "#1b1c1c",
-                      "secondary-fixed-dim": "#e9c349",
-                      "on-background": "#191c1d"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "base": "8px",
-                      "container-max": "1280px",
-                      "margin-mobile": "16px",
-                      "gutter": "24px",
-                      "margin-desktop": "64px"
-              },
-              "fontFamily": {
-                      "title-md": [
-                              "Sora"
-                      ],
-                      "display-lg": [
-                              "Sora"
-                      ],
-                      "body-lg": [
-                              "Inter"
-                      ],
-                      "label-sm": [
-                              "Sora"
-                      ],
-                      "body-md": [
-                              "Inter"
-                      ],
-                      "headline-lg": [
-                              "Sora"
-                      ],
-                      "headline-lg-mobile": [
-                              "Sora"
-                      ]
-              },
-              "fontSize": {
-                      "title-md": [
-                              "20px",
-                              {
-                                      "lineHeight": "28px",
-                                      "fontWeight": "500"
-                              }
-                      ],
-                      "display-lg": [
-                              "48px",
-                              {
-                                      "lineHeight": "56px",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "28px",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "label-sm": [
-                              "12px",
-                              {
-                                      "lineHeight": "16px",
-                                      "letterSpacing": "0.05em",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "24px",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-lg": [
-                              "32px",
-                              {
-                                      "lineHeight": "40px",
-                                      "letterSpacing": "-0.01em",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "headline-lg-mobile": [
-                              "28px",
-                              {
-                                      "lineHeight": "36px",
-                                      "fontWeight": "600"
-                              }
-                      ]
-              }
-      },
-          },
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-container": "#001b44",
+                        "secondary": "#735c00",
+                        "secondary-container": "#fed65b",
+                        "primary": "#00020a",
+                        "on-surface-variant": "#44474f",
+                        "surface": "#f8f9fa",
+                        "surface-container-low": "#f3f4f5",
+                        "background": "#ffffff",
+                        "on-background": "#191c1d",
+                        "outline-variant": "#e1e3e4",
+                    },
+                    spacing: {
+                        "container-max": "1280px",
+                        "margin-desktop": "80px",
+                        "margin-mobile": "24px",
+                        "section-py": "120px",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"],
+                        "heading": ["Sora", "sans-serif"],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                },
+            },
         }
-      </script>
+    </script>
 <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: theme('colors.background');
             color: theme('colors.on-background');
+            line-height: 1.7;
         }
-        h1, h2, h3, h4, h5, h6, .font-title-md, .font-display-lg, .font-headline-lg {
+        h1, h2, h3, h4, h5, h6, .font-heading {
             font-family: 'Sora', sans-serif;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
         }
         
         .hex-bg {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-opacity='0.02' fill='%23001b44' fill-rule='evenodd'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-opacity='0.015' fill='%23001b44' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(0, 27, 68, 0.05);
-            box-shadow: 0 4px 20px rgba(0, 27, 68, 0.03);
+        .enterprise-card {
+            background: #ffffff;
+            border: 1px solid theme('colors.outline-variant');
+            box-shadow: 0 4px 24px rgba(0, 27, 68, 0.02);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .glass-card:hover {
-            box-shadow: 0 8px 32px rgba(115, 92, 0, 0.1);
-            border-color: rgba(115, 92, 0, 0.2);
+        .enterprise-card:hover {
+            box-shadow: 0 12px 32px rgba(0, 27, 68, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .enterprise-card-dark {
+            background: theme('colors.primary');
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .enterprise-card-dark:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-primary {
+            background-color: theme('colors.primary-container');
+            color: #ffffff;
+            transition: all 0.2s ease;
         }
         
-        .gold-glow:hover {
-            box-shadow: 0 0 15px rgba(254, 214, 91, 0.4);
+        .btn-primary:hover {
+            background-color: theme('colors.primary');
+            box-shadow: 0 4px 12px rgba(0, 27, 68, 0.15);
         }
 
-        .gradient-text {
-            background: linear-gradient(135deg, theme('colors.primary') 0%, theme('colors.secondary') 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .btn-outline {
+            border: 1px solid theme('colors.outline-variant');
+            color: theme('colors.primary-container');
+            transition: all 0.2s ease;
         }
 
-        .timeline-line::before {
-            content: '';
-            position: absolute;
-            top: 24px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: theme('colors.surface-variant');
-            z-index: 0;
+        .btn-outline:hover {
+            border-color: theme('colors.primary-container');
+            background-color: rgba(0, 27, 68, 0.02);
+        }
+
+        /* Initial state for intersection observer animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
-<body class="antialiased relative overflow-x-hidden">
-<!-- Global Animation Background -->
-<div class="fixed inset-0 z-[-1] opacity-20 pointer-events-none mix-blend-multiply">
-<!-- STITCH_SHADER_START:ANIMATION_11 class="absolute inset-0 w-full h-full" -->
-<div class="absolute inset-0 w-full h-full" style="display:block;">
-<canvas id="shader-canvas-ANIMATION_11" style="display:block;width:100%;height:100%"></canvas>
-<script>
-(function() {
-  const canvas = document.getElementById('shader-canvas-ANIMATION_11');
-
-  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
-  // This fires on initial layout and whenever the element is resized.
-  function syncSize() {
-    const w = canvas.clientWidth  || 1280;
-    const h = canvas.clientHeight || 720;
-    if (canvas.width !== w || canvas.height !== h) {
-      canvas.width  = w;
-      canvas.height = h;
-    }
-  }
-  if (typeof ResizeObserver !== 'undefined') {
-    new ResizeObserver(syncSize).observe(canvas);
-  }
-  syncSize();
-
-  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-  if (!gl) return;
-  const vs = `attribute vec2 a_position;
-varying vec2 v_texCoord;
-void main() {
-  v_texCoord = a_position * 0.5 + 0.5;
-  gl_Position = vec4(a_position, 0.0, 1.0);
-}`;
-  const fs = `precision highp float;
-varying vec2 v_texCoord;
-uniform float u_time;
-uniform vec2 u_resolution;
-
-void main() {
-    vec2 uv = v_texCoord;
-    vec2 grid = fract(uv * 40.0 + u_time * 0.05);
-    float line = smoothstep(0.02, 0.0, abs(grid.x - 0.5)) + smoothstep(0.02, 0.0, abs(grid.y - 0.5));
-    
-    // Pulse effect
-    float pulse = sin(u_time * 2.0) * 0.5 + 0.5;
-    vec3 color = mix(vec3(0.0, 0.105, 0.266), vec3(0.831, 0.686, 0.216), line * 0.2 * pulse);
-    
-    gl_FragColor = vec4(color, 0.1);
-}`;
-  function cs(type, src) {
-    const s = gl.createShader(type);
-    gl.shaderSource(s, src);
-    gl.compileShader(s);
-    return s;
-  }
-  const prog = gl.createProgram();
-  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
-  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
-  gl.linkProgram(prog);
-  gl.useProgram(prog);
-  const buf = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
-  const pos = gl.getAttribLocation(prog, 'a_position');
-  gl.enableVertexAttribArray(pos);
-  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
-  const uTime = gl.getUniformLocation(prog, 'u_time');
-  const uRes = gl.getUniformLocation(prog, 'u_resolution');
-  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
-
-  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
-  // Shaders that need normalized coords should use: u_mouse / u_resolution.
-  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
-  window.addEventListener('mousemove', (event) => {
-    const rect = canvas.getBoundingClientRect();
-    if (rect.width && rect.height) {
-      const nx = (event.clientX - rect.left) / rect.width;
-      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
-      mouse.x = nx * canvas.width;
-      mouse.y = ny * canvas.height;
-    }
-  });
-
-  function render(t) {
-    if (typeof ResizeObserver === 'undefined') syncSize();
-    gl.viewport(0, 0, canvas.width, canvas.height);
-    if (uTime) gl.uniform1f(uTime, t * 0.001);
-    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
-    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
-    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-    requestAnimationFrame(render);
-  }
-  render(0);
-})();
-</script>
-</div>
-<!-- STITCH_SHADER_END:ANIMATION_11 -->
-</div>
+<body class="antialiased relative overflow-x-hidden text-body-md text-on-surface-variant">
+<!-- Subtle Background -->
 <div class="fixed inset-0 z-[-2] hex-bg pointer-events-none"></div>
 <!-- Navigation -->
-<nav class="bg-surface/70 dark:bg-primary-container/70 backdrop-blur-xl font-title-md text-title-md text-primary dark:text-primary-fixed fixed top-0 w-full z-50 border-b border-white/10 dark:border-white/5 shadow-sm transition-all duration-300 ease-in-out">
-<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
-<div class="font-display-lg text-[24px] font-bold tracking-tight text-primary flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary text-3xl">token</span>
-                Trinova Digital
-            </div>
-<div class="hidden md:flex gap-8 items-center">
-<a class="text-secondary dark:text-secondary-fixed border-b-2 border-secondary dark:border-secondary-fixed pb-1" href="#">Home</a>
-<a class="text-on-surface hover:text-secondary transition-colors duration-300" href="#about">About</a>
-<a class="text-on-surface hover:text-secondary transition-colors duration-300" href="#services">Services</a>
-<a class="text-on-surface hover:text-secondary transition-colors duration-300" href="#case-studies">Case Studies</a>
-<a class="text-on-surface hover:text-secondary transition-colors duration-300" href="#team">Team</a>
+<nav class="bg-white/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/50 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-5 max-w-container-max mx-auto">
+<div class="font-heading text-xl font-bold tracking-tight text-primary-container flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-2xl">token</span>
+            Trinova Digital
+        </div>
+<div class="hidden md:flex gap-10 items-center text-sm font-medium">
+<a class="text-primary-container border-b-2 border-secondary pb-1" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors duration-200" href="#about">About</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors duration-200" href="#services">Services</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors duration-200" href="#case-studies">Case Studies</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors duration-200" href="#team">Team</a>
 </div>
 <div class="hidden md:block">
-<a class="bg-primary text-on-primary px-6 py-2 rounded font-label-sm text-label-sm hover:bg-primary/90 transition-colors gold-glow" href="#contact">Book Consultation</a>
+<a class="btn-primary px-5 py-2.5 rounded-md text-sm font-semibold tracking-wide" href="#contact">Book Consultation</a>
 </div>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined text-3xl">menu</span>
+<button class="md:hidden text-primary-container">
+<span class="material-symbols-outlined text-2xl">menu</span>
 </button>
 </div>
 </nav>
 <main class="pt-24">
 <!-- 1. Hero Section -->
-<section class="relative min-h-[921px] flex items-center px-margin-mobile md:px-margin-desktop py-20 overflow-hidden">
-<div class="absolute inset-0 z-0 opacity-80 right-0 w-full md:w-2/3 ml-auto">
-<!-- STITCH_THREEJS_START:ANIMATION_12 class="absolute inset-0 w-full h-full" -->
-<div class="absolute inset-0 w-full h-full" style="display:block;">
-<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
-<div id="threejs-container-ANIMATION_12" style="width:100%;height:100%"></div>
-<script>
-(function() {
-  const container = document.getElementById('threejs-container-ANIMATION_12');
-  const devicePixelRatio = window.devicePixelRatio || 1;
-  const width = container.clientWidth || window.innerWidth;
-const height = container.clientHeight || window.innerHeight;
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-renderer.setSize(width, height);
-container.appendChild(renderer.domElement);
-
-// Node Group
-const nodesGroup = new THREE.Group();
-scene.add(nodesGroup);
-
-// Create Nodes (Hexagonal layout concept)
-const nodeGeometry = new THREE.SphereGeometry(0.1, 16, 16);
-const nodeMaterial = new THREE.MeshPhongMaterial({ color: 0xD4AF37, emissive: 0xD4AF37, emissiveIntensity: 0.5 });
-const lineMaterial = new THREE.LineBasicMaterial({ color: 0x004a99, transparent: true, opacity: 0.3 });
-
-const nodeCount = 15;
-const nodes = [];
-
-for (let i = 0; i < nodeCount; i++) {
-    const node = new THREE.Mesh(nodeGeometry, nodeMaterial);
-    node.position.set((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10);
-    nodesGroup.add(node);
-    nodes.push(node);
-}
-
-// Connect nodes with lines
-const lineGeometry = new THREE.BufferGeometry();
-const linePositions = new Float32Array(nodeCount * nodeCount * 3);
-lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
-const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
-scene.add(lines);
-
-camera.position.z = 12;
-
-const light = new THREE.PointLight(0xffffff, 1, 100);
-light.position.set(10, 10, 10);
-scene.add(light);
-scene.add(new THREE.AmbientLight(0x404040));
-
-function animate() {
-    requestAnimationFrame(animate);
-    nodesGroup.rotation.y += 0.002;
-    nodesGroup.rotation.x += 0.001;
-    
-    const positions = lines.geometry.attributes.position.array;
-    let idx = 0;
-    for (let i = 0; i < nodeCount; i++) {
-        for (let j = i + 1; j < nodeCount; j++) {
-            const dist = nodes[i].position.distanceTo(nodes[j].position);
-            if (dist < 4) {
-                positions[idx++] = nodes[i].position.x;
-                positions[idx++] = nodes[i].position.y;
-                positions[idx++] = nodes[i].position.z;
-                positions[idx++] = nodes[j].position.x;
-                positions[idx++] = nodes[j].position.y;
-                positions[idx++] = nodes[j].position.z;
-            }
-        }
-    }
-    lines.geometry.attributes.position.needsUpdate = true;
-    renderer.render(scene, camera);
-}
-
-window.addEventListener('resize', () => {
-    const w = container.clientWidth || window.innerWidth;
-    const h = container.clientHeight || window.innerHeight;
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
-    renderer.setSize(w, h);
-});
-
-animate();
-})();
-</script>
-</div>
-<!-- STITCH_THREEJS_END:ANIMATION_12 -->
-</div>
-<div class="max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
-<div class="flex flex-col justify-center gap-6">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/20 border border-secondary/20 w-fit">
+<section class="relative min-h-[85vh] flex items-center px-margin-mobile md:px-margin-desktop py-20 overflow-hidden reveal active">
+<div class="max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
+<div class="lg:col-span-8 flex flex-col justify-center gap-8">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary-container/10 border border-secondary/20 w-fit">
 <span class="material-symbols-outlined text-secondary text-sm">rocket_launch</span>
-<span class="font-label-sm text-label-sm text-secondary">Premier IT Consulting</span>
+<span class="text-xs font-semibold tracking-wider text-secondary uppercase">Premier IT Consulting</span>
 </div>
-<h1 class="font-display-lg text-display-lg text-primary tracking-tight">
-                        Transforming Business Through <span class="gradient-text">Digital Intelligence</span>
-</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-                        We architect high-performance enterprise technology solutions, blending structural precision with futuristic innovation to propel your business forward.
-                    </p>
+<h1 class="font-heading text-5xl md:text-6xl lg:text-[72px] text-primary-container font-bold leading-[1.1]">
+                    Transforming Business Through Digital Intelligence
+                </h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                    We architect high-performance enterprise technology solutions, blending structural precision with futuristic innovation to propel your business forward.
+                </p>
 <div class="flex flex-wrap gap-4 mt-4">
-<a class="bg-primary text-on-primary px-8 py-4 rounded font-label-sm text-label-sm hover:bg-primary/90 transition-all gold-glow flex items-center gap-2" href="#services">
-                            Explore Solutions
-                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+<a class="btn-primary px-8 py-4 rounded-md text-sm font-semibold flex items-center gap-2" href="#services">
+                        Explore Solutions
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </a>
-<a class="bg-transparent text-primary border border-secondary px-8 py-4 rounded font-label-sm text-label-sm hover:bg-secondary/10 transition-all gold-glow" href="#contact">
-                            Consult With Us
-                        </a>
+<a class="btn-outline px-8 py-4 rounded-md text-sm font-semibold" href="#contact">
+                        Consult With Us
+                    </a>
 </div>
 </div>
 </div>
 </section>
 <!-- 2. About Section -->
-<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low relative" id="about">
+<section class="py-section-py px-margin-mobile md:px-margin-desktop bg-surface-container-low border-y border-outline-variant/50 reveal" id="about">
 <div class="max-w-container-max mx-auto">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 <div>
-<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Architecting the Future of Enterprise</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">
-                            PT Trinova Digital Teknologi establishes a high-performance corporate identity for a premier IT consulting firm. We blend the architectural precision of enterprise technology with a futuristic, forward-leaning aesthetic.
-                        </p>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8">
-                            Our "Professional Intelligence" approach balances the stability of deep-navy corporate roots with the agility of gold-accented innovation, ensuring robust and scalable digital transformation.
-                        </p>
-<div class="grid grid-cols-2 gap-8">
-<div class="border-l-2 border-secondary pl-4">
-<p class="font-display-lg text-4xl font-bold text-primary mb-1">50+</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant">Enterprise Clients</p>
+<h2 class="font-heading text-3xl md:text-4xl text-primary-container font-bold mb-6">Architecting the Future of Enterprise</h2>
+<p class="text-base text-on-surface-variant mb-6 leading-relaxed">
+                        PT Trinova Digital Teknologi establishes a high-performance corporate identity for a premier IT consulting firm. We blend the architectural precision of enterprise technology with a futuristic, forward-leaning aesthetic.
+                    </p>
+<p class="text-base text-on-surface-variant mb-10 leading-relaxed">
+                        Our "Professional Intelligence" approach balances the stability of deep-navy corporate roots with the agility of gold-accented innovation, ensuring robust and scalable digital transformation.
+                    </p>
+<div class="grid grid-cols-2 gap-8 pt-6 border-t border-outline-variant/50">
+<div>
+<p class="font-heading text-4xl font-bold text-primary-container mb-2">50+</p>
+<p class="text-sm font-medium text-on-surface-variant uppercase tracking-wider">Enterprise Clients</p>
 </div>
-<div class="border-l-2 border-secondary pl-4">
-<p class="font-display-lg text-4xl font-bold text-primary mb-1">99%</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant">Project Success Rate</p>
+<div>
+<p class="font-heading text-4xl font-bold text-primary-container mb-2">99%</p>
+<p class="text-sm font-medium text-on-surface-variant uppercase tracking-wider">Project Success Rate</p>
 </div>
 </div>
 </div>
 <div class="relative">
-<div class="aspect-square rounded-xl overflow-hidden glass-card p-2 relative z-10">
-<div class="bg-cover bg-center w-full h-full rounded-lg" data-alt="A sophisticated abstract rendering of a digital network overlaid on modern corporate architecture, utilizing deep navy blues and glowing gold accents to convey professional intelligence and enterprise IT consulting. High aesthetic quality, sharp focus, bright studio lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAo9Ab_FfrXf6pc33wPd4pvF0PVNZfSGNyyQPEtify6Fr0jnVqpei6CFWofHs5EUa13GzoCV0O7xR4p7d5McyW8ejMCoELn_Zx2xtyDbB3h2G2Lu7rTEu7BtTNNJPa0xyAhHub3jDPo2GTuRAIjs0taEUQjvpeKVvmYrPJlqc1iHqbFKgIVp1SovdMU85MZ54_VGnFkW7JwnTptm4GcTUVKXoWweHMMCaqZFOqkzoR4gOxmN7hiUZfutEBoxLu-UWSaeX-kpuY9o1Y')"></div>
+<div class="aspect-square rounded-2xl overflow-hidden enterprise-card p-2">
+<div class="bg-cover bg-center w-full h-full rounded-xl" data-alt="Corporate architecture and digital network" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAo9Ab_FfrXf6pc33wPd4pvF0PVNZfSGNyyQPEtify6Fr0jnVqpei6CFWofHs5EUa13GzoCV0O7xR4p7d5McyW8ejMCoELn_Zx2xtyDbB3h2G2Lu7rTEu7BtTNNJPa0xyAhHub3jDPo2GTuRAIjs0taEUQjvpeKVvmYrPJlqc1iHqbFKgIVp1SovdMU85MZ54_VGnFkW7JwnTptm4GcTUVKXoWweHMMCaqZFOqkzoR4gOxmN7hiUZfutEBoxLu-UWSaeX-kpuY9o1Y')"></div>
 </div>
-<!-- Decorative element -->
-<div class="absolute -bottom-8 -right-8 w-48 h-48 bg-secondary-container/30 rounded-full blur-3xl z-0"></div>
 </div>
 </div>
 </div>
 </section>
 <!-- 5. Services -->
-<section class="py-24 px-margin-mobile md:px-margin-desktop" id="services">
+<section class="py-section-py px-margin-mobile md:px-margin-desktop bg-white reveal" id="services">
 <div class="max-w-container-max mx-auto">
-<div class="text-center mb-16 max-w-2xl mx-auto">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Core Capabilities</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">Comprehensive technological solutions designed to elevate operational efficiency and drive strategic growth.</p>
+<div class="mb-16 max-w-3xl">
+<h2 class="font-heading text-3xl md:text-4xl text-primary-container font-bold mb-6">Core Capabilities</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed">Comprehensive technological solutions designed to elevate operational efficiency and drive strategic growth for modern enterprises.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Service 1 -->
-<div class="glass-card rounded-xl p-8 transition-all duration-300 group">
-<div class="w-14 h-14 bg-primary/5 rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary/10 transition-colors">
-<span class="material-symbols-outlined text-primary text-3xl">architecture</span>
+<div class="enterprise-card rounded-2xl p-10 flex flex-col h-full">
+<div class="w-12 h-12 border border-outline-variant rounded-lg flex items-center justify-center mb-8 text-primary-container bg-surface-container-low">
+<span class="material-symbols-outlined text-2xl">architecture</span>
 </div>
-<h3 class="font-title-md text-title-md text-primary mb-3">IT Consulting</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">Strategic technology roadmapping and architectural design to align IT infrastructure with business objectives.</p>
-<a class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary hover:underline" href="#">Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<h3 class="font-heading text-xl font-bold text-primary-container mb-4">IT Consulting</h3>
+<p class="text-base text-on-surface-variant mb-8 flex-grow">Strategic technology roadmapping and architectural design to align IT infrastructure with business objectives.</p>
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:text-primary-container transition-colors w-fit" href="#">
+                        Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
 </div>
 <!-- Service 2 -->
-<div class="glass-card rounded-xl p-8 transition-all duration-300 group">
-<div class="w-14 h-14 bg-primary/5 rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary/10 transition-colors">
-<span class="material-symbols-outlined text-primary text-3xl">analytics</span>
+<div class="enterprise-card rounded-2xl p-10 flex flex-col h-full">
+<div class="w-12 h-12 border border-outline-variant rounded-lg flex items-center justify-center mb-8 text-primary-container bg-surface-container-low">
+<span class="material-symbols-outlined text-2xl">analytics</span>
 </div>
-<h3 class="font-title-md text-title-md text-primary mb-3">Business Analysis</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">Deep-dive operational assessment and process optimization leveraging data-driven insights.</p>
-<a class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary hover:underline" href="#">Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<h3 class="font-heading text-xl font-bold text-primary-container mb-4">Business Analysis</h3>
+<p class="text-base text-on-surface-variant mb-8 flex-grow">Deep-dive operational assessment and process optimization leveraging data-driven insights.</p>
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:text-primary-container transition-colors w-fit" href="#">
+                        Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
 </div>
 <!-- Service 3 -->
-<div class="glass-card rounded-xl p-8 transition-all duration-300 group">
-<div class="w-14 h-14 bg-primary/5 rounded-lg flex items-center justify-center mb-6 group-hover:bg-secondary/10 transition-colors">
-<span class="material-symbols-outlined text-primary text-3xl">hub</span>
+<div class="enterprise-card rounded-2xl p-10 flex flex-col h-full">
+<div class="w-12 h-12 border border-outline-variant rounded-lg flex items-center justify-center mb-8 text-primary-container bg-surface-container-low">
+<span class="material-symbols-outlined text-2xl">hub</span>
 </div>
-<h3 class="font-title-md text-title-md text-primary mb-3">Digital Transformation</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">End-to-end modernization of legacy systems incorporating cloud, AI, and automation technologies.</p>
-<a class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary hover:underline" href="#">Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+<h3 class="font-heading text-xl font-bold text-primary-container mb-4">Digital Transformation</h3>
+<p class="text-base text-on-surface-variant mb-8 flex-grow">End-to-end modernization of legacy systems incorporating cloud, AI, and automation technologies.</p>
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:text-primary-container transition-colors w-fit" href="#">
+                        Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
 </div>
 </div>
 </div>
 </section>
 <!-- 10. Case Studies (Bento Grid) -->
-<section class="py-24 px-margin-mobile md:px-margin-desktop bg-primary text-on-primary relative overflow-hidden" id="case-studies">
-<!-- Abstract background element -->
-<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary-container/50 to-transparent pointer-events-none"></div>
-<div class="max-w-container-max mx-auto relative z-10">
-<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<section class="py-section-py px-margin-mobile md:px-margin-desktop bg-[#00020a] text-white border-y border-white/5 reveal" id="case-studies">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
 <div class="max-w-2xl">
-<h2 class="font-headline-lg text-headline-lg mb-4">Proven Impact</h2>
-<p class="font-body-md text-body-md text-on-primary/80">Real-world examples of how our Professional Intelligence methodology translates into measurable business success.</p>
+<h2 class="font-heading text-3xl md:text-4xl font-bold mb-6">Proven Impact</h2>
+<p class="text-lg text-white/70 leading-relaxed">Real-world examples of how our Professional Intelligence methodology translates into measurable business success.</p>
 </div>
-<a class="border border-secondary px-6 py-2 rounded font-label-sm text-label-sm hover:bg-secondary/10 transition-colors shrink-0" href="#">View All Cases</a>
+<a class="border border-white/20 px-6 py-3 rounded-md text-sm font-semibold hover:bg-white/5 transition-colors shrink-0" href="#">View All Cases</a>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6 h-auto md:h-[600px]">
+<div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6 h-auto md:h-[640px]">
 <!-- Bento Item 1 (Large) -->
-<div class="md:col-span-2 md:row-span-2 relative rounded-xl overflow-hidden group">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A modern data center interior with glowing blue server racks, representing a massive cloud migration project. The lighting highlights the clean, organized structure of the enterprise hardware. Deep navy and subtle gold lighting accents. High resolution." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwUxcntmvzTa8GUz-bjMB_Z0tAsmGV3fz3wwICA3nCAZ7QwWu7rESc8RN8OwfVb-1JtZdARqYIIOEjDeZ8C0Xt9-YCVGbqZx39jy5Aa4X7nDIeLPpgl9ObH0HopcLbYy4pw8HYEl8jmb9Vw8VqXAeJO4qQlJKlJQzNZHOzefqaEH9AKFCMhiLq0MALcRj0FB1oypFeCRS3JbGxOwjKLcRvrCMRMW3Yc_6vk0bWMMXuz9PRXGqmZAdTCfptMuGlvCXzTAoyTGU6AIQ')"></div>
-<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-8 w-full">
-<div class="flex gap-2 mb-3">
-<span class="bg-secondary/20 text-secondary border border-secondary/30 px-2 py-1 rounded text-xs font-semibold backdrop-blur-sm">Finance</span>
-<span class="bg-white/10 text-white border border-white/20 px-2 py-1 rounded text-xs font-semibold backdrop-blur-sm">Cloud Migration</span>
+<div class="md:col-span-2 md:row-span-2 relative rounded-2xl overflow-hidden enterprise-card-dark group border border-white/10">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-60" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwUxcntmvzTa8GUz-bjMB_Z0tAsmGV3fz3wwICA3nCAZ7QwWu7rESc8RN8OwfVb-1JtZdARqYIIOEjDeZ8C0Xt9-YCVGbqZx39jy5Aa4X7nDIeLPpgl9ObH0HopcLbYy4pw8HYEl8jmb9Vw8VqXAeJO4qQlJKlJQzNZHOzefqaEH9AKFCMhiLq0MALcRj0FB1oypFeCRS3JbGxOwjKLcRvrCMRMW3Yc_6vk0bWMMXuz9PRXGqmZAdTCfptMuGlvCXzTAoyTGU6AIQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#00020a] via-[#00020a]/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-10 w-full">
+<div class="flex gap-3 mb-6">
+<span class="bg-secondary/20 text-secondary border border-secondary/30 px-3 py-1 rounded text-xs font-semibold tracking-wide uppercase">Finance</span>
+<span class="bg-white/10 text-white border border-white/20 px-3 py-1 rounded text-xs font-semibold tracking-wide uppercase">Cloud Migration</span>
 </div>
-<h3 class="font-title-md text-2xl font-bold mb-2">Global Bank System Overhaul</h3>
-<p class="font-body-md text-body-md text-white/80 max-w-xl">Migrated legacy core banking systems to a secure, scalable hybrid cloud architecture, reducing latency by 40% and cutting operational costs.</p>
+<h3 class="font-heading text-3xl font-bold mb-4">Global Bank System Overhaul</h3>
+<p class="text-base text-white/70 max-w-xl leading-relaxed">Migrated legacy core banking systems to a secure, scalable hybrid cloud architecture, reducing latency by 40% and cutting operational costs.</p>
 </div>
 </div>
 <!-- Bento Item 2 -->
-<div class="relative rounded-xl overflow-hidden bg-primary-container group border border-white/10">
-<div class="p-6 h-full flex flex-col justify-between relative z-10">
+<div class="rounded-2xl p-8 flex flex-col justify-between enterprise-card-dark border border-white/10">
 <div>
-<span class="material-symbols-outlined text-secondary mb-4 block text-3xl">precision_manufacturing</span>
-<h3 class="font-title-md text-xl font-bold mb-2">Manufacturing IoT</h3>
-<p class="font-body-md text-sm text-white/70">Implemented predictive maintenance sensors across 5 factories, preventing $2M in downtime.</p>
+<div class="w-10 h-10 border border-white/10 rounded-lg flex items-center justify-center mb-6 text-white bg-white/5">
+<span class="material-symbols-outlined text-xl">precision_manufacturing</span>
 </div>
-<div class="mt-4 flex items-center justify-between">
-<span class="font-bold text-secondary text-2xl">-30%</span>
-<span class="text-xs text-white/50">Downtime</span>
+<h3 class="font-heading text-xl font-bold mb-3">Manufacturing IoT</h3>
+<p class="text-sm text-white/70 leading-relaxed">Implemented predictive maintenance sensors across 5 factories, preventing $2M in downtime.</p>
 </div>
+<div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+<span class="font-heading font-bold text-secondary text-3xl">-30%</span>
+<span class="text-xs font-semibold text-white/50 uppercase tracking-wider">Downtime</span>
 </div>
 </div>
 <!-- Bento Item 3 -->
-<div class="relative rounded-xl overflow-hidden bg-gradient-to-br from-primary-container to-primary group border border-white/10">
-<div class="p-6 h-full flex flex-col justify-between relative z-10">
+<div class="rounded-2xl p-8 flex flex-col justify-between enterprise-card-dark border border-white/10">
 <div>
-<span class="material-symbols-outlined text-secondary mb-4 block text-3xl">health_and_safety</span>
-<h3 class="font-title-md text-xl font-bold mb-2">HealthTech Data Pipeline</h3>
-<p class="font-body-md text-sm text-white/70">Streamlined patient data architecture to ensure HIPAA compliance and real-time analytics.</p>
+<div class="w-10 h-10 border border-white/10 rounded-lg flex items-center justify-center mb-6 text-white bg-white/5">
+<span class="material-symbols-outlined text-xl">health_and_safety</span>
 </div>
-<div class="mt-4 flex items-center justify-between">
-<span class="font-bold text-secondary text-2xl">100%</span>
-<span class="text-xs text-white/50">Compliance</span>
+<h3 class="font-heading text-xl font-bold mb-3">HealthTech Data Pipeline</h3>
+<p class="text-sm text-white/70 leading-relaxed">Streamlined patient data architecture to ensure HIPAA compliance and real-time analytics.</p>
 </div>
+<div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
+<span class="font-heading font-bold text-secondary text-3xl">100%</span>
+<span class="text-xs font-semibold text-white/50 uppercase tracking-wider">Compliance</span>
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- 13. Contact & Map -->
-<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface" id="contact">
+<section class="py-section-py px-margin-mobile md:px-margin-desktop bg-surface reveal" id="contact">
 <div class="max-w-container-max mx-auto">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
 <div>
-<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Initiate Transformation</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8">Connect with our consultants to discuss your architectural challenges and explore technological solutions.</p>
-<form class="space-y-6">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<h2 class="font-heading text-3xl md:text-4xl text-primary-container font-bold mb-6">Initiate Transformation</h2>
+<p class="text-base text-on-surface-variant mb-12 leading-relaxed max-w-lg">Connect with our consultants to discuss your architectural challenges and explore technological solutions tailored for your enterprise.</p>
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div>
-<label class="block font-label-sm text-label-sm text-primary mb-2 uppercase">First Name</label>
-<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 px-0 py-2 transition-colors font-body-md" placeholder="John" type="text"/>
+<label class="block text-xs font-semibold text-primary-container mb-2 uppercase tracking-wider">First Name</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary-container focus:ring-0 px-0 py-2 transition-colors text-base" placeholder="John" type="text"/>
 </div>
 <div>
-<label class="block font-label-sm text-label-sm text-primary mb-2 uppercase">Last Name</label>
-<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 px-0 py-2 transition-colors font-body-md" placeholder="Doe" type="text"/>
+<label class="block text-xs font-semibold text-primary-container mb-2 uppercase tracking-wider">Last Name</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary-container focus:ring-0 px-0 py-2 transition-colors text-base" placeholder="Doe" type="text"/>
 </div>
 </div>
 <div>
-<label class="block font-label-sm text-label-sm text-primary mb-2 uppercase">Corporate Email</label>
-<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 px-0 py-2 transition-colors font-body-md" placeholder="john@company.com" type="email"/>
+<label class="block text-xs font-semibold text-primary-container mb-2 uppercase tracking-wider">Corporate Email</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary-container focus:ring-0 px-0 py-2 transition-colors text-base" placeholder="john@company.com" type="email"/>
 </div>
 <div>
-<label class="block font-label-sm text-label-sm text-primary mb-2 uppercase">Project Inquiry</label>
-<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 px-0 py-2 transition-colors font-body-md resize-none" placeholder="Describe your operational objectives..." rows="3"></textarea>
+<label class="block text-xs font-semibold text-primary-container mb-2 uppercase tracking-wider">Project Inquiry</label>
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary-container focus:ring-0 px-0 py-2 transition-colors text-base resize-none" placeholder="Describe your operational objectives..." rows="3"></textarea>
 </div>
-<button class="bg-primary text-on-primary px-8 py-4 rounded font-label-sm text-label-sm hover:bg-primary/90 transition-all gold-glow w-full md:w-auto" type="submit">
-                                Submit Inquiry
-                            </button>
+<button class="btn-primary px-8 py-4 rounded-md text-sm font-semibold w-full md:w-auto mt-4" type="submit">
+                            Submit Inquiry
+                        </button>
 </form>
 </div>
-<div class="glass-card rounded-xl p-2 h-full min-h-[400px] flex flex-col">
-<div class="bg-cover bg-center w-full h-full rounded-lg flex-grow min-h-[300px]" data-alt="A stylized, clean vector map showing a corporate office location in Jakarta, Indonesia. The map uses deep navy blue roads and subtle gold markers to match the brand identity. Professional, minimalist aesthetic." data-location="Jakarta" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCNf9Q7YX5C41ohNZF6oajPdBGe3V1KIS5KoNsZJyUiK3L_3MNWxh4i32PxIEECEtU5gH4wjANDvauUxlD1ZLEQ7tad7bYmL0tCkPvH2-JJKiKJPZ-ozZ1H7h1Js8sqnAe13_45UPYFw_dkgB06LCVQPoUtkkVovhYThS-tsJNdnVKakZrocyIuKiz6NojV8Kzeimv-6lxwEO0Znrh6gV0I9cn_Jq8n5jiH6fizZP_uUXNbt7fTjQj-BnHQTX3Y-FwdvVmusyF_I1Q')"></div>
-<div class="p-6 bg-white/50 mt-2 rounded-lg">
-<h4 class="font-title-md text-lg font-bold text-primary mb-2">Headquarters</h4>
-<p class="font-body-md text-sm text-on-surface-variant flex items-start gap-2">
-<span class="material-symbols-outlined text-secondary text-lg">location_on</span>
-                                 Jakarta, Indonesia<br/>Pacific Century Place, SCBD
-                             </p>
+<div class="enterprise-card rounded-2xl p-3 h-full min-h-[500px] flex flex-col bg-white">
+<div class="bg-cover bg-center w-full h-full rounded-xl flex-grow min-h-[350px] relative" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCNf9Q7YX5C41ohNZF6oajPdBGe3V1KIS5KoNsZJyUiK3L_3MNWxh4i32PxIEECEtU5gH4wjANDvauUxlD1ZLEQ7tad7bYmL0tCkPvH2-JJKiKJPZ-ozZ1H7h1Js8sqnAe13_45UPYFw_dkgB06LCVQPoUtkkVovhYThS-tsJNdnVKakZrocyIuKiz6NojV8Kzeimv-6lxwEO0Znrh6gV0I9cn_Jq8n5jiH6fizZP_uUXNbt7fTjQj-BnHQTX3Y-FwdvVmusyF_I1Q')">
+<div class="absolute bottom-6 left-6 right-6 p-6 bg-white shadow-lg border border-outline-variant/30 rounded-xl">
+<h4 class="font-heading text-lg font-bold text-primary-container mb-2">Headquarters</h4>
+<p class="text-sm text-on-surface-variant flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-xl">location_on</span>
+<span>Jakarta, Indonesia<br/>Pacific Century Place, SCBD</span>
+</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 </section>
 </main>
-<!-- Footer from JSON -->
-<footer class="bg-primary dark:bg-primary-container text-on-primary dark:text-primary-fixed w-full py-16 border-t border-white/5 font-body-md text-body-md">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-<div class="md:col-span-1 mb-8 md:mb-0">
-<div class="font-display-lg text-headline-lg text-secondary-fixed mb-4 flex items-center gap-2">
-<span class="material-symbols-outlined text-3xl">token</span>
-                    Trinova
-                </div>
-<p class="text-on-primary/70 dark:text-primary-fixed/70 text-sm mt-4">Transforming Business Through Digital Intelligence.</p>
+<!-- Footer -->
+<footer class="bg-[#00020a] text-white w-full py-20 border-t border-white/10 font-sans text-sm">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-4 pr-8">
+<div class="font-heading text-2xl font-bold text-white mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl text-secondary">token</span>
+                Trinova
+            </div>
+<p class="text-white/60 leading-relaxed mb-8">Transforming Business Through Digital Intelligence. Architecting high-performance enterprise technology solutions.</p>
+<p class="text-xs text-white/40">© 2024 PT Trinova Digital Teknologi.<br/>All rights reserved.</p>
 </div>
-<div class="md:col-span-2 grid grid-cols-2 gap-8">
+<div class="md:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8">
 <div>
-<h4 class="font-bold text-white mb-4">Legal</h4>
-<ul class="space-y-2">
-<li><a class="text-on-primary/70 dark:text-primary-fixed/70 hover:text-secondary-fixed transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a></li>
-<li><a class="text-on-primary/70 dark:text-primary-fixed/70 hover:text-secondary-fixed transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a></li>
-<li><a class="text-on-primary/70 dark:text-primary-fixed/70 hover:text-secondary-fixed transition-all opacity-80 hover:opacity-100" href="#">Cookie Policy</a></li>
-<li><a class="text-on-primary/70 dark:text-primary-fixed/70 hover:text-secondary-fixed transition-all opacity-80 hover:opacity-100" href="#">Security</a></li>
+<h4 class="font-semibold text-white mb-6 uppercase tracking-wider text-xs">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-white/60 hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-white/60 hover:text-white transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-white/60 hover:text-white transition-colors" href="#">Cookie Policy</a></li>
+<li><a class="text-white/60 hover:text-white transition-colors" href="#">Security</a></li>
 </ul>
 </div>
 <div>
-<h4 class="font-bold text-white mb-4">Company</h4>
-<ul class="space-y-2">
-<li><a class="text-on-primary/70 dark:text-primary-fixed/70 hover:text-secondary-fixed transition-all opacity-80 hover:opacity-100" href="#about">About Us</a></li>
-<li><a class="text-on-primary/70 dark:text-primary-fixed/70 hover:text-secondary-fixed transition-all opacity-80 hover:opacity-100" href="#services">Services</a></li>
-<li><a class="text-on-primary/70 dark:text-primary-fixed/70 hover:text-secondary-fixed transition-all opacity-80 hover:opacity-100" href="#contact">Contact</a></li>
+<h4 class="font-semibold text-white mb-6 uppercase tracking-wider text-xs">Company</h4>
+<ul class="space-y-4">
+<li><a class="text-white/60 hover:text-white transition-colors" href="#about">About Us</a></li>
+<li><a class="text-white/60 hover:text-white transition-colors" href="#services">Services</a></li>
+<li><a class="text-white/60 hover:text-white transition-colors" href="#case-studies">Case Studies</a></li>
+<li><a class="text-white/60 hover:text-white transition-colors" href="#contact">Contact</a></li>
 </ul>
 </div>
+<div class="col-span-2 md:col-span-1">
+<h4 class="font-semibold text-white mb-6 uppercase tracking-wider text-xs">Connect</h4>
+<ul class="space-y-4">
+<li><a class="text-white/60 hover:text-white transition-colors" href="#">LinkedIn</a></li>
+<li><a class="text-white/60 hover:text-white transition-colors" href="#">Twitter</a></li>
+</ul>
 </div>
-<div class="md:col-span-1 mt-8 md:mt-0">
-<p class="text-sm text-on-primary/50">© 2024 PT Trinova Digital Teknologi. All rights reserved.</p>
 </div>
 </div>
 </footer>
+<script>
+    // Simple intersection observer for reveal animations
+    document.addEventListener("DOMContentLoaded", function() {
+        const reveals = document.querySelectorAll(".reveal");
+        
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        reveals.forEach(reveal => {
+            // Hero is already active
+            if (!reveal.classList.contains('active')) {
+                revealObserver.observe(reveal);
+            }
+        });
+    });
+</script>
 </body></html>
