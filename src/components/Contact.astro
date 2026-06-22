@@ -4,10 +4,10 @@ interface Props {
   description: string;
   hqTitle: string;
   hqAddress: string;
-  mapImage: string;
+  mapLink: string;
 }
 
-const { title, description, hqTitle, hqAddress, mapImage } = Astro.props;
+const { title, description, hqTitle, hqAddress, mapLink } = Astro.props;
 ---
 
 <section class="py-section-py px-margin-mobile md:px-margin-desktop bg-surface reveal" id="contact">
@@ -41,16 +41,23 @@ const { title, description, hqTitle, hqAddress, mapImage } = Astro.props;
         </form>
       </div>
       <div class="enterprise-card rounded-2xl p-3 h-full min-h-[500px] flex flex-col bg-white">
-        <div
-          class="bg-cover bg-center w-full h-full rounded-xl flex-grow min-h-[350px] relative"
-          style={`background-image: url('${mapImage}')`}
-        >
-          <div class="absolute bottom-6 left-6 right-6 p-6 bg-white shadow-lg border border-outline-variant/30 rounded-xl">
+        <div class="w-full h-full rounded-xl flex-grow min-h-[350px] relative overflow-hidden">
+          <!-- Embed Google Maps Interactive Iframe -->
+          <iframe 
+            src="https://maps.google.com/maps?q=Plaza%20Indonesia,%20Jl.%20M.H.%20Thamrin%20No.Kav.%2028-30,%20Jakarta&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+            class="w-full h-full border-0 absolute inset-0 rounded-lg" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          
+          <!-- Address Info Overlay Card -->
+          <div class="absolute bottom-6 left-6 right-6 p-6 bg-white/95 backdrop-blur-sm shadow-xl border border-outline-variant/30 rounded-xl z-10">
             <h4 class="font-heading text-lg font-bold text-primary-container mb-2">{hqTitle}</h4>
-            <p class="text-sm text-on-surface-variant flex items-start gap-3">
-              <span class="material-symbols-outlined text-secondary text-xl">location_on</span>
-              <span set:html={hqAddress} />
-            </p>
+            <a href={mapLink} target="_blank" rel="noopener noreferrer" class="text-sm text-on-surface-variant flex items-start gap-3 hover:text-secondary group transition-colors duration-200">
+              <span class="material-symbols-outlined text-secondary text-xl group-hover:scale-110 transition-transform duration-200">location_on</span>
+              <span class="hover:underline" set:html={hqAddress} />
+            </a>
           </div>
         </div>
       </div>
