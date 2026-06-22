@@ -38,12 +38,9 @@ const renderedServices = await Promise.all(
               <span class="material-symbols-outlined text-2xl">{service.data.icon}</span>
             </div>
             <h3 class="font-heading text-xl font-bold text-primary-container mb-4">{service.data.title}</h3>
-            <div class="text-base text-on-surface-variant mb-8 flex-grow">
+            <div class="text-base text-on-surface-variant flex-grow">
               <Content />
             </div>
-            <a class="inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:text-primary-container transition-colors w-fit" href="#">
-              Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
-            </a>
           </div>
         );
       })}
