@@ -8,37 +8,31 @@ interface Props {
   title: string;
   paragraphs: string[];
   stats: Stat[];
-  image: string;
 }
 
-const { title, paragraphs, stats, image } = Astro.props;
+const { title, paragraphs, stats } = Astro.props;
 ---
 
-<section class="py-section-py px-margin-mobile md:px-margin-desktop bg-surface-container-low border-y border-outline-variant/50 reveal" id="about">
-  <div class="max-w-container-max mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-      <div>
-        <h2 class="font-heading text-3xl md:text-4xl text-primary-container font-bold mb-6">{title}</h2>
-        {paragraphs.map((p) => (
-          <p class="text-base text-on-surface-variant mb-6 leading-relaxed">{p}</p>
+<section class="relative py-section-py px-margin-mobile md:px-margin-desktop bg-surface-container-low border-y border-outline-variant/50 reveal overflow-hidden" id="about">
+  <!-- Background Image with Premium Overlay -->
+  <div class="absolute inset-0 z-0 select-none pointer-events-none">
+    <img src="/images/about-bg.png" alt="Corporate Meeting" class="w-full h-full object-cover object-center md:object-right opacity-20 md:opacity-30" />
+    <div class="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-surface-container-low via-surface-container-low/95 md:via-surface-container-low/80 to-transparent"></div>
+  </div>
+
+  <div class="max-w-container-max mx-auto relative z-10">
+    <div class="max-w-2xl">
+      <h2 class="font-heading text-3xl md:text-4xl text-primary-container font-bold mb-6">{title}</h2>
+      {paragraphs.map((p) => (
+        <p class="text-base text-on-surface-variant mb-6 leading-relaxed">{p}</p>
+      ))}
+      <div class="grid grid-cols-2 gap-8 pt-6 border-t border-outline-variant/50 mt-4">
+        {stats.map((stat) => (
+          <div>
+            <p class="font-heading text-4xl font-bold text-primary-container mb-2">{stat.value}</p>
+            <p class="text-sm font-medium text-on-surface-variant uppercase tracking-wider">{stat.label}</p>
+          </div>
         ))}
-        <div class="grid grid-cols-2 gap-8 pt-6 border-t border-outline-variant/50 mt-4">
-          {stats.map((stat) => (
-            <div>
-              <p class="font-heading text-4xl font-bold text-primary-container mb-2">{stat.value}</p>
-              <p class="text-sm font-medium text-on-surface-variant uppercase tracking-wider">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div class="relative">
-        <div class="aspect-square rounded-2xl overflow-hidden enterprise-card p-2">
-          <div
-            class="bg-cover bg-center w-full h-full rounded-xl"
-            data-alt="Corporate architecture and digital network"
-            style={`background-image: url('${image}')`}
-          ></div>
-        </div>
       </div>
     </div>
   </div>
