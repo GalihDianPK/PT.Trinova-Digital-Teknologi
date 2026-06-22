@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from 'astro:content';
+
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+
+// Pre-render all service content
+const renderedServices = await Promise.all(
+  services.map(async (service) => {
+    const { Content } = await render(service);
+    return { service, Content };
+  })
+);
+---
+
+<section class="py-section-py px-margin-mobile md:px-margin-desktop bg-white reveal" id="services">
+  <div class="max-w-container-max mx-auto">
+    <div class="mb-16 max-w-3xl">
+      <h2 class="font-heading text-3xl md:text-4xl text-primary-container font-bold mb-6">Core Capabilities</h2>
+      <p class="text-lg text-on-surface-variant leading-relaxed">Comprehensive technological solutions designed to elevate operational efficiency and drive strategic growth for modern enterprises.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {renderedServices.map(({ service, Content }) => (
+        <div class="enterprise-card rounded-2xl p-10 flex flex-col h-full">
+          <div class="w-12 h-12 border border-outline-variant rounded-lg flex items-center justify-center mb-8 text-primary-container bg-surface-container-low">
+            <span class="material-symbols-outlined text-2xl">{service.data.icon}</span>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-primary-container mb-4">{service.data.title}</h3>
+          <div class="text-base text-on-surface-variant mb-8 flex-grow">
+            <Content />
+          </div>
+          <a class="inline-flex items-center gap-2 text-sm font-semibold text-secondary hover:text-primary-container transition-colors w-fit" href="#">
+            Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

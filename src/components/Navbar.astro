@@ -1,0 +1,25 @@
+---
+// Navbar component - extracted from index.html lines 127-147
+---
+
+<nav class="bg-white/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/50 transition-all duration-300 ease-in-out">
+  <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-5 max-w-container-max mx-auto">
+    <div class="font-heading text-xl font-bold tracking-tight text-primary-container flex items-center gap-2">
+      <span class="material-symbols-outlined text-secondary text-2xl">token</span>
+      Trinova Digital
+    </div>
+    <div class="hidden md:flex gap-10 items-center text-sm font-medium">
+      <a class="text-primary-container border-b-2 border-secondary pb-1" href="#">Home</a>
+      <a class="text-on-surface-variant hover:text-primary-container transition-colors duration-200" href="#about">About</a>
+      <a class="text-on-surface-variant hover:text-primary-container transition-colors duration-200" href="#services">Services</a>
+      <a class="text-on-surface-variant hover:text-primary-container transition-colors duration-200" href="#case-studies">Case Studies</a>
+      <a class="text-on-surface-variant hover:text-primary-container transition-colors duration-200" href="#team">Team</a>
+    </div>
+    <div class="hidden md:block">
+      <a class="btn-primary px-5 py-2.5 rounded-md text-sm font-semibold tracking-wide" href="#contact">Book Consultation</a>
+    </div>
+    <button class="md:hidden text-primary-container" id="mobile-menu-btn">
+      <span class="material-symbols-outlined text-2xl">menu</span>
+    </button>
+  </div>
+</nav>

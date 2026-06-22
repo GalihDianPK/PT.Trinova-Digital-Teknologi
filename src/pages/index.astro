@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import CaseStudies from '../components/CaseStudies.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+
+// ===== HERO DATA =====
+// Edit these values to change the hero section content
+const hero = {
+  badge: "Premier IT Consulting",
+  title: "Transforming Business Through Digital Intelligence",
+  description: "We architect high-performance enterprise technology solutions, blending structural precision with futuristic innovation to propel your business forward.",
+  ctaPrimary: { text: "Explore Solutions", href: "#services" },
+  ctaSecondary: { text: "Consult With Us", href: "#contact" },
+};
+
+// ===== ABOUT DATA =====
+// Edit these values to change the about section content
+const about = {
+  title: "Architecting the Future of Enterprise",
+  paragraphs: [
+    "PT Trinova Digital Teknologi establishes a high-performance corporate identity for a premier IT consulting firm. We blend the architectural precision of enterprise technology with a futuristic, forward-leaning aesthetic.",
+    'Our "Professional Intelligence" approach balances the stability of deep-navy corporate roots with the agility of gold-accented innovation, ensuring robust and scalable digital transformation.',
+  ],
+  stats: [
+    { value: "50+", label: "Enterprise Clients" },
+    { value: "99%", label: "Project Success Rate" },
+  ],
+  image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAo9Ab_FfrXf6pc33wPd4pvF0PVNZfSGNyyQPEtify6Fr0jnVqpei6CFWofHs5EUa13GzoCV0O7xR4p7d5McyW8ejMCoELn_Zx2xtyDbB3h2G2Lu7rTEu7BtTNNJPa0xyAhHub3jDPo2GTuRAIjs0taEUQjvpeKVvmYrPJlqc1iHqbFKgIVp1SovdMU85MZ54_VGnFkW7JwnTptm4GcTUVKXoWweHMMCaqZFOqkzoR4gOxmN7hiUZfutEBoxLu-UWSaeX-kpuY9o1Y",
+};
+
+// ===== CONTACT DATA =====
+// Edit these values to change the contact section content
+const contact = {
+  title: "Initiate Transformation",
+  description: "Connect with our consultants to discuss your architectural challenges and explore technological solutions tailored for your enterprise.",
+  hqTitle: "Headquarters",
+  hqAddress: "Jakarta, Indonesia<br/>Pacific Century Place, SCBD",
+  mapImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuCNf9Q7YX5C41ohNZF6oajPdBGe3V1KIS5KoNsZJyUiK3L_3MNWxh4i32PxIEECEtU5gH4wjANDvauUxlD1ZLEQ7tad7bYmL0tCkPvH2-JJKiKJPZ-ozZ1H7h1Js8sqnAe13_45UPYFw_dkgB06LCVQPoUtkkVovhYThS-tsJNdnVKakZrocyIuKiz6NojV8Kzeimv-6lxwEO0Znrh6gV0I9cn_Jq8n5jiH6fizZP_uUXNbt7fTjQj-BnHQTX3Y-FwdvVmusyF_I1Q",
+};
+
+// ===== FOOTER DATA =====
+// Edit these values to change the footer content
+const footer = {
+  tagline: "Transforming Business Through Digital Intelligence. Architecting high-performance enterprise technology solutions.",
+  copyright: "© 2024 PT Trinova Digital Teknologi.<br/>All rights reserved.",
+  linkGroups: [
+    {
+      title: "Legal",
+      links: [
+        { text: "Privacy Policy", href: "#" },
+        { text: "Terms of Service", href: "#" },
+        { text: "Cookie Policy", href: "#" },
+        { text: "Security", href: "#" },
+      ],
+    },
+    {
+      title: "Company",
+      links: [
+        { text: "About Us", href: "#about" },
+        { text: "Services", href: "#services" },
+        { text: "Case Studies", href: "#case-studies" },
+        { text: "Contact", href: "#contact" },
+      ],
+    },
+    {
+      title: "Connect",
+      links: [
+        { text: "LinkedIn", href: "#" },
+        { text: "Twitter", href: "#" },
+      ],
+    },
+  ],
+};
+---
+
+<Layout>
+  <Navbar />
+  <main class="pt-24">
+    <Hero {...hero} />
+    <About {...about} />
+    <Services />
+    <CaseStudies />
+    <Contact {...contact} />
+  </main>
+  <Footer {...footer} />
+</Layout>
