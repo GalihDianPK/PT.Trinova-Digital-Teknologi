@@ -5,6 +5,7 @@ import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
 import Services from '../components/Services.astro';
 import CaseStudies from '../components/CaseStudies.astro';
+import Founders from '../components/Founders.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 
@@ -12,7 +13,7 @@ import Footer from '../components/Footer.astro';
 // Edit these values to change the hero section content
 const hero = {
   title: "Transforming Business Through Digital Intelligence",
-  description: "We architect high-performance enterprise technology solutions, blending structural precision with futuristic innovation to propel your business forward.",
+  description: "Kami mengintegrasikan analisis bisnis dan teknologi mutakhir untuk menciptakan solusi strategis yang berkelanjutan bagi perusahaan Anda. Bersama kami, ambil keputusan lebih cerdas berbasis data.",
   ctaPrimary: { text: "Explore Solutions", href: "#services" },
   ctaSecondary: { text: "Consult With Us", href: "#contact" },
 };
@@ -29,7 +30,34 @@ const about = {
     { value: "50+", label: "Enterprise Clients" },
     { value: "99%", label: "Project Success Rate" },
   ],
-  image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAo9Ab_FfrXf6pc33wPd4pvF0PVNZfSGNyyQPEtify6Fr0jnVqpei6CFWofHs5EUa13GzoCV0O7xR4p7d5McyW8ejMCoELn_Zx2xtyDbB3h2G2Lu7rTEu7BtTNNJPa0xyAhHub3jDPo2GTuRAIjs0taEUQjvpeKVvmYrPJlqc1iHqbFKgIVp1SovdMU85MZ54_VGnFkW7JwnTptm4GcTUVKXoWweHMMCaqZFOqkzoR4gOxmN7hiUZfutEBoxLu-UWSaeX-kpuY9o1Y",
+  image: "/images/hero-bg.jpg",
+};
+
+// ===== FOUNDERS DATA =====
+// Edit these values to change the founders section content
+const founders = {
+  title: "Meet Our Visionaries",
+  subtitle: "Kepemimpinan yang berdedikasi untuk mendorong inovasi dan kesuksesan teknologi bisnis Anda.",
+  members: [
+    {
+      name: "Galih Dian",
+      role: "Chief Executive Officer (CEO)",
+      image: "/images/founder-ceo.png",
+      bio: "Mengarahkan visi strategis Trinova Digital untuk memberdayakan bisnis melalui teknologi cerdas."
+    },
+    {
+      name: "Sarah Amanda",
+      role: "Chief Technology Officer (CTO)",
+      image: "/images/founder-cto.png",
+      bio: "Memimpin pengembangan solusi teknologi inovatif dan memastikan standar arsitektur terbaik."
+    },
+    {
+      name: "Reza Pratama",
+      role: "Chief Operating Officer (COO)",
+      image: "/images/founder-coo.png",
+      bio: "Mengoptimalkan operasional dan memastikan pengiriman layanan yang luar biasa bagi klien."
+    }
+  ]
 };
 
 // ===== CONTACT DATA =====
@@ -83,6 +111,7 @@ const footer = {
     <Hero {...hero} />
     <About {...about} />
     <Services />
+    <Founders {...founders} />
     <CaseStudies />
     <Contact {...contact} />
   </main>

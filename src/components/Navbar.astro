@@ -1,5 +1,5 @@
 ---
-// Navbar component - extracted from index.html lines 127-147
+// Navbar component with scroll spy for active link indicator
 ---
 
 <nav class="bg-white/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/50 transition-all duration-300 ease-in-out">
@@ -8,12 +8,13 @@
       <img src="/images/logo.png" alt="PT Trinova Digital Teknologi" class="h-10 w-auto" />
       <span class="font-heading text-xl font-bold tracking-tight text-primary-container">Trinova Digital</span>
     </a>
-    <div class="hidden md:flex gap-10 items-center text-sm font-medium">
-      <a class="text-primary-container border-b-2 border-secondary pb-1" href="#">Home</a>
-      <a class="text-on-surface-variant hover:text-primary-container transition-colors duration-200" href="#about">About</a>
-      <a class="text-on-surface-variant hover:text-primary-container transition-colors duration-200" href="#services">Services</a>
-      <a class="text-on-surface-variant hover:text-primary-container transition-colors duration-200" href="#case-studies">Case Studies</a>
-      <a class="text-on-surface-variant hover:text-primary-container transition-colors duration-200" href="#team">Team</a>
+    <div class="hidden md:flex gap-10 items-center text-sm font-medium" id="nav-links">
+      <a class="nav-link text-on-surface-variant hover:text-primary-container transition-colors duration-200 pb-1 border-b-2 border-transparent" href="#home" data-section="home">Home</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary-container transition-colors duration-200 pb-1 border-b-2 border-transparent" href="#about" data-section="about">About</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary-container transition-colors duration-200 pb-1 border-b-2 border-transparent" href="#services" data-section="services">Services</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary-container transition-colors duration-200 pb-1 border-b-2 border-transparent" href="#case-studies" data-section="case-studies">Case Studies</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary-container transition-colors duration-200 pb-1 border-b-2 border-transparent" href="#founders" data-section="founders">Founders</a>
+      <a class="nav-link text-on-surface-variant hover:text-primary-container transition-colors duration-200 pb-1 border-b-2 border-transparent" href="#contact" data-section="contact">Contact</a>
     </div>
     <div class="hidden md:block">
       <a class="btn-primary px-5 py-2.5 rounded-md text-sm font-semibold tracking-wide" href="#contact">Book Consultation</a>
@@ -23,3 +24,55 @@
     </button>
   </div>
 </nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+    
+    function setActiveLink(sectionId: string) {
+      navLinks.forEach(link => {
+        const linkSection = link.getAttribute('data-section');
+        if (linkSection === sectionId) {
+          link.classList.remove('text-on-surface-variant', 'border-transparent');
+          link.classList.add('text-primary-container', 'border-secondary');
+        } else {
+          link.classList.remove('text-primary-container', 'border-secondary');
+          link.classList.add('text-on-surface-variant', 'border-transparent');
+        }
+      });
+    }
+
+    // Set Home as active initially
+    setActiveLink('home');
+
+    // Intersection Observer for scroll spy
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px', // triggers when section is roughly in upper-middle of viewport
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveLink(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Also update on click for instant feedback
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const sectionId = link.getAttribute('data-section');
+        if (sectionId) {
+          setActiveLink(sectionId);
+        }
+      });
+    });
+  });
+</script>
