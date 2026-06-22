@@ -1,6 +1,6 @@
 ---
 interface Props {
-  badge: string;
+  badge?: string;
   title: string;
   description: string;
   ctaPrimary: { text: string; href: string };
@@ -18,10 +18,12 @@ const { badge, title, description, ctaPrimary, ctaSecondary } = Astro.props;
   </div>
   <div class="max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
     <div class="lg:col-span-8 flex flex-col justify-center gap-8">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary-container/10 border border-secondary/20 w-fit">
-        <span class="material-symbols-outlined text-secondary text-sm">rocket_launch</span>
-        <span class="text-xs font-semibold tracking-wider text-secondary uppercase">{badge}</span>
-      </div>
+      {badge && (
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary-container/10 border border-secondary/20 w-fit">
+          <span class="material-symbols-outlined text-secondary text-sm">rocket_launch</span>
+          <span class="text-xs font-semibold tracking-wider text-secondary uppercase">{badge}</span>
+        </div>
+      )}
       <h1 class="font-heading text-5xl md:text-6xl lg:text-[72px] text-primary-container font-bold leading-[1.1]">
         {title}
       </h1>
