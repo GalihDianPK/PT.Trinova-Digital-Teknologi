@@ -1,0 +1,251 @@
+---
+interface Stat {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  title: string;
+  paragraphs: string[];
+  stats: Stat[];
+}
+
+const { title, paragraphs, stats } = Astro.props;
+---
+
+<section class="relative py-section-py px-margin-mobile md:px-margin-desktop bg-surface-container-low border-y border-outline-variant/50 reveal overflow-hidden" id="tentang-trinova">
+  <!-- Background Image with Premium Overlay (visible on Profile tab) -->
+  <div class="absolute inset-0 z-0 select-none pointer-events-none opacity-40 mix-blend-overlay">
+    <div class="absolute inset-0 bg-gradient-to-b from-surface-container-low via-surface-container-low/95 to-surface-container-low"></div>
+  </div>
+
+  <div class="max-w-container-max mx-auto relative z-10">
+    <!-- Header with tab navigation -->
+    <div class="flex flex-col items-center mb-12 text-center">
+      <h2 class="font-heading text-3xl md:text-5xl text-primary-container font-bold mb-6">Tentang Trinova</h2>
+      <p class="text-base text-on-surface-variant max-w-xl mb-8">
+        Temukan profil, tonggak sejarah, serta visi dan misi yang mendasari setiap langkah inovasi digital kami.
+      </p>
+      
+      <!-- Premium Tab Buttons (3 bars layout horizontally on desktop/stacked on mobile) -->
+      <div class="flex flex-col sm:flex-row gap-2 p-1.5 bg-white border border-outline-variant rounded-xl w-full max-w-lg shadow-sm">
+        <button 
+          class="tab-btn flex-1 py-3 px-6 rounded-lg text-sm font-semibold transition-all duration-300 active bg-primary-container text-white shadow-sm"
+          data-tab="profil"
+        >
+          Profil
+        </button>
+        <button 
+          class="tab-btn flex-1 py-3 px-6 rounded-lg text-sm font-semibold transition-all duration-300 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low"
+          data-tab="sejarah"
+        >
+          Sejarah
+        </button>
+        <button 
+          class="tab-btn flex-1 py-3 px-6 rounded-lg text-sm font-semibold transition-all duration-300 text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low"
+          data-tab="visi-misi"
+        >
+          Visi & Misi
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab Contents -->
+    <div class="relative min-h-[400px]">
+      
+      <!-- 1. PROFIL TAB -->
+      <div class="tab-panel opacity-100 transition-all duration-500 ease-out" id="tab-profil">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-5 relative min-h-[300px] rounded-2xl overflow-hidden shadow-lg border border-outline-variant/60">
+            <img src="/images/about-bg.png" alt="Corporate Meeting" class="absolute inset-0 w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-primary-container/85 via-primary-container/40 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-8 text-white">
+              <span class="font-heading text-lg font-semibold tracking-wide text-secondary-container">PT Trinova Digital Teknologi</span>
+              <p class="text-xs text-white/80 mt-1">Solusi Digital & Rekayasa Arsitektur IT Modern</p>
+            </div>
+          </div>
+          
+          <div class="lg:col-span-7 flex flex-col justify-center">
+            <h3 class="font-heading text-2xl md:text-3xl text-primary-container font-bold mb-6">{title}</h3>
+            {paragraphs.map((p) => (
+              <p class="text-base text-on-surface-variant mb-5 leading-relaxed">{p}</p>
+            ))}
+            
+            <div class="grid grid-cols-2 gap-8 pt-6 border-t border-outline-variant/50 mt-4">
+              {stats.map((stat) => (
+                <div>
+                  <p class="font-heading text-4xl font-bold text-primary-container mb-2">{stat.value}</p>
+                  <p class="text-sm font-semibold text-on-surface-variant uppercase tracking-wider">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. SEJARAH TAB -->
+      <div class="tab-panel hidden opacity-0 transition-all duration-500 ease-out" id="tab-sejarah">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <!-- Left side Quote card -->
+          <div class="lg:col-span-4 bg-primary-container text-white p-8 rounded-2xl relative overflow-hidden border border-secondary/20 shadow-xl flex flex-col justify-between min-h-[300px]">
+            <div class="absolute -right-16 -top-16 w-48 h-48 rounded-full bg-secondary-container/10 blur-xl"></div>
+            <div class="relative z-10">
+              <span class="material-symbols-outlined text-secondary text-5xl mb-6">format_quote</span>
+              <h4 class="font-heading text-2xl font-bold leading-relaxed mb-6">
+                "Three Minds and One Innovation"
+              </h4>
+            </div>
+            <div class="relative z-10 border-t border-white/10 pt-6">
+              <p class="text-sm font-semibold tracking-wider text-secondary uppercase">PT PT TriNova Digital Teknologi</p>
+              <p class="text-xs text-white/60 mt-1">IT Consultant & Business Analyst</p>
+            </div>
+          </div>
+
+          <!-- Right side Sejarah Text -->
+          <div class="lg:col-span-8 flex flex-col gap-6">
+            <h3 class="font-heading text-2xl md:text-3xl text-primary-container font-bold mb-2">
+              Sejarah PT TriNova Digital Teknologi
+            </h3>
+            <div class="w-20 h-1 bg-secondary rounded mb-2"></div>
+            <p class="text-base text-on-surface-variant leading-relaxed">
+              PT TriNova Digital Teknologi merupakan perusahaan yang bergerak di bidang IT Consultant dan Business Analyst yang didirikan atas dasar kesamaan visi tiga pendirinya, yaitu Bagus, Krisna, dan Galih. Berbekal minat dan pengalaman di bidang teknologi informasi, mereka melihat semakin besarnya kebutuhan perusahaan dan organisasi terhadap solusi digital yang mampu meningkatkan efisiensi, produktivitas, serta daya saing di era transformasi digital. Dari pemikiran tersebut lahirlah sebuah perusahaan yang berkomitmen untuk menjadi mitra strategis dalam pengembangan teknologi informasi.
+            </p>
+            <p class="text-base text-on-surface-variant leading-relaxed">
+              Nama TriNova memiliki makna yang mendalam. Kata "Tri" melambangkan tiga pendiri yang menjadi fondasi utama perusahaan, sedangkan "Nova" berarti bintang baru atau inovasi baru yang mencerminkan semangat perusahaan untuk terus berkembang dan menciptakan terobosan di bidang teknologi. Nama tersebut dipilih sebagai simbol kolaborasi, kreativitas, dan tekad untuk menghadirkan solusi yang relevan dengan kebutuhan dunia bisnis modern.
+            </p>
+            <p class="text-base text-on-surface-variant leading-relaxed">
+              Sejak awal berdiri, PT TriNova Digital Teknologi memfokuskan layanan pada konsultasi teknologi informasi dan analisis bisnis. Perusahaan membantu klien dalam memahami proses bisnis yang sedang berjalan, mengidentifikasi berbagai permasalahan, serta merancang solusi digital yang tepat dan berkelanjutan. Melalui pendekatan berbasis data dan teknologi, perusahaan berupaya mendukung pengambilan keputusan yang lebih efektif sehingga dapat memberikan nilai tambah bagi setiap klien yang dilayani.
+            </p>
+            <p class="text-base text-on-surface-variant leading-relaxed">
+              Dengan mengusung slogan "Three Minds and One Innovation", PT TriNova Digital Teknologi terus berkomitmen untuk menghadirkan inovasi yang bermanfaat bagi dunia usaha. Perusahaan menjunjung tinggi nilai profesionalisme, kepercayaan, kerja sama tim, dan inovasi berkelanjutan dalam setiap layanan yang diberikan. Ke depan, PT TriNova Digital Teknologi bertekad untuk menjadi perusahaan konsultan teknologi informasi yang unggul dalam menyediakan solusi strategis berbasis digital guna membantu klien mencapai pertumbuhan dan kesuksesan yang berkelanjutan.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. VISI & MISI TAB -->
+      <div class="tab-panel hidden opacity-0 transition-all duration-500 ease-out" id="tab-visi-misi">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+          
+          <!-- Vision side -->
+          <div class="lg:col-span-5 bg-gradient-to-br from-primary-container to-primary text-white p-10 rounded-2xl border border-white/5 shadow-xl flex flex-col justify-center relative overflow-hidden">
+            <div class="absolute -right-24 -bottom-24 w-64 h-64 rounded-full bg-secondary-container/5 blur-3xl"></div>
+            <div class="relative z-10">
+              <div class="w-12 h-12 rounded-xl bg-secondary-container/20 flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-secondary-container text-3xl">visibility</span>
+              </div>
+              <h4 class="font-heading text-sm font-semibold tracking-wider text-secondary-container uppercase mb-2">Visi Kami</h4>
+              <h3 class="font-heading text-2xl md:text-3xl font-bold leading-normal mb-6">
+                Menjadi perusahaan konsultan teknologi informasi yang unggul dalam memberikan solusi strategis dan analisis bisnis berbasis digital untuk meningkatkan kinerja dan daya saing klien.
+              </h3>
+            </div>
+          </div>
+
+          <!-- Mission side -->
+          <div class="lg:col-span-7 bg-white p-8 md:p-10 rounded-2xl border border-outline-variant/60 shadow-sm flex flex-col justify-center">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 rounded-xl bg-primary-container/5 flex items-center justify-center text-primary-container">
+                <span class="material-symbols-outlined text-3xl">track_changes</span>
+              </div>
+              <div>
+                <h4 class="font-heading text-sm font-semibold tracking-wider text-secondary uppercase">Misi Kami</h4>
+                <h3 class="font-heading text-2xl font-bold text-primary-container">Langkah Strategis Nyata</h3>
+              </div>
+            </div>
+
+            <ul class="flex flex-col gap-6">
+              {[
+                { icon: "check_circle", text: "Memberikan layanan konsultasi IT yang tepat dan berbasis kebutuhan klien" },
+                { icon: "analytics", text: "Menganalisis proses bisnis untuk meningkatkan efisiensi dan produktivitas" },
+                { icon: "insights", text: "Menghadirkan solusi digital yang strategis dan berkelanjutan" },
+                { icon: "database", text: "Membantu klien dalam pengambilan keputusan berbasis data" },
+                { icon: "handshake", text: "Membangun hubungan profesional yang berorientasi pada kepercayaan dan hasil" }
+              ].map((misi, index) => (
+                <li class="flex items-start gap-4">
+                  <div class="w-8 h-8 rounded-lg bg-secondary-container/10 flex items-center justify-center text-secondary shrink-0 mt-0.5">
+                    <span class="material-symbols-outlined text-xl">{misi.icon}</span>
+                  </div>
+                  <div>
+                    <span class="text-xs font-bold text-secondary uppercase tracking-wider">Misi {index + 1}</span>
+                    <p class="text-base font-medium text-on-surface-variant leading-relaxed mt-0.5">{misi.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupTabs() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    function switchTab(tabId: string) {
+      // Deactivate all buttons
+      tabBtns.forEach(btn => {
+        btn.classList.remove('bg-primary-container', 'text-white', 'shadow-sm', 'active');
+        btn.classList.add('text-on-surface-variant', 'hover:text-primary-container', 'hover:bg-surface-container-low');
+      });
+
+      // Activate clicked button
+      const targetBtn = document.querySelector(`[data-tab="${tabId}"]`);
+      if (targetBtn) {
+        targetBtn.classList.remove('text-on-surface-variant', 'hover:text-primary-container', 'hover:bg-surface-container-low');
+        targetBtn.classList.add('bg-primary-container', 'text-white', 'shadow-sm', 'active');
+      }
+
+      // Hide all panels
+      tabPanels.forEach(panel => {
+        panel.classList.add('hidden', 'opacity-0');
+        panel.classList.remove('opacity-100');
+      });
+
+      // Show target panel with premium fade transition
+      const targetPanel = document.getElementById(`tab-${tabId}`);
+      if (targetPanel) {
+        targetPanel.classList.remove('hidden');
+        // trigger reflow to restart animation
+        void targetPanel.offsetWidth;
+        targetPanel.classList.add('opacity-100');
+        targetPanel.classList.remove('opacity-0');
+      }
+    }
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabId = btn.getAttribute('data-tab');
+        if (tabId) {
+          switchTab(tabId);
+          // Optional: Update history/URL hash without jumping
+          history.pushState(null, '', `#tentang-${tabId}`);
+        }
+      });
+    });
+
+    // Listen to custom event from navbar dropdown clicks
+    window.addEventListener('switch-tentang-tab', (e: Event) => {
+      const customEvent = e as CustomEvent;
+      if (customEvent.detail && customEvent.detail.tab) {
+        switchTab(customEvent.detail.tab);
+      }
+    });
+
+    // Check URL hash on page load
+    const hash = window.location.hash;
+    if (hash === '#about-profil' || hash === '#tentang-profil') {
+      switchTab('profil');
+    } else if (hash === '#about-sejarah' || hash === '#tentang-sejarah') {
+      switchTab('sejarah');
+    } else if (hash === '#about-visimisi' || hash === '#tentang-visi-misi') {
+      switchTab('visi-misi');
+    }
+  }
+
+  // Run on page load
+  setupTabs();
+</script>

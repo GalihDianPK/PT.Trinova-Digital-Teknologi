@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import TentangTrinova from '../components/TentangTrinova.astro';
+import Footer from '../components/Footer.astro';
+
+const about = {
+  title: "Architecting the Future of Enterprise",
+  paragraphs: [
+    "PT Trinova Digital Teknologi membangun identitas perusahaan berkinerja tinggi untuk perusahaan konsultan TI terkemuka. Kami memadukan ketelitian arsitektur teknologi perusahaan dengan estetika futuristik dan berwawasan ke depan.",
+    'Pendekatan "Kecerdasan Profesional" kami menyeimbangkan stabilitas akar perusahaan yang kuat dengan kelincahan inovasi yang berkelas, memastikan transformasi digital yang tangguh dan terukur.',
+  ],
+  stats: [
+    { value: "50+", label: "Enterprise Clients" },
+    { value: "98%", label: "Project Success Rate" },
+  ],
+};
+
+const footer = {
+  tagline: "Transforming Business Through Digital Intelligence. Architecting high-performance enterprise technology solutions.",
+  copyright: "© 2026 PT Trinova Digital Teknologi.<br/>All rights reserved.",
+  linkGroups: [
+    {
+      title: "Legal",
+      links: [
+        { text: "Privacy Policy", href: "#" },
+        { text: "Terms of Service", href: "#" },
+        { text: "Cookie Policy", href: "#" },
+        { text: "Security", href: "#" },
+      ],
+    },
+    {
+      title: "Company",
+      links: [
+        { text: "Tentang Trinova", href: "/tentang-trinova" },
+        { text: "Services", href: "/#services" },
+        { text: "Contact", href: "/#contact" },
+      ],
+    },
+    {
+      title: "Connect",
+      links: [
+        { text: "LinkedIn", href: "#" },
+        { text: "Twitter", href: "#" },
+      ],
+    },
+  ],
+};
+---
+
+<Layout title="Tentang PT Trinova Digital Teknologi" description="Pelajari profil lengkap, sejarah pendirian, serta visi dan misi kami dalam mendukung transformasi bisnis digital Anda.">
+  <Navbar />
+  
+  <main class="pt-24 min-h-[80vh]">
+    <TentangTrinova {...about} />
+  </main>
+  
+  <Footer {...footer} />
+</Layout>
+
+<script>
+  // Helper to handle client-side hash changing for tab triggering
+  function handleUrlHash() {
+    const hash = window.location.hash;
+    let tabId = '';
+    
+    if (hash === '#profil') {
+      tabId = 'profil';
+    } else if (hash === '#sejarah') {
+      tabId = 'sejarah';
+    } else if (hash === '#visi-misi') {
+      tabId = 'visi-misi';
+    }
+    
+    if (tabId) {
+      // Dispatch custom event to trigger tab switch in TentangTrinova component
+      window.dispatchEvent(new CustomEvent('switch-tentang-tab', { detail: { tab: tabId } }));
+    }
+  }
+
+  // Handle on initial load
+  window.addEventListener('DOMContentLoaded', () => {
+    // Small delay to ensure tab JS is registered
+    setTimeout(handleUrlHash, 100);
+  });
+
+  // Handle on hash change (e.g. clicking different links in navbar while on the same page)
+  window.addEventListener('hashchange', handleUrlHash);
+</script>
